@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { getLoginFn, getLogoutFn, getRegisterFn } from '../auth0-utils'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Nav() {
   const user = useSelector((state) => state.user)
@@ -27,32 +28,37 @@ function Nav() {
 
   return (
     <nav>
-      <h1 className="logo">Full-stack Boilerplate with Auth0</h1>
-      <section className="nav-item">
+      <ul>
+        <li>
+          <Link to="/how-it-works">How It Works</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
         <IfAuthenticated>
-          <p>
+          {/* <li>
             Hello, {user.name} {user.roles ? `(${user.roles})` : null}
-          </p>
-          <section className="sign">
+          </li> */}
+          <li>
             <a href="/" onClick={handleLogoff} className="nav-link">
               Log out
             </a>
-          </section>
+          </li>
         </IfAuthenticated>
         <IfNotAuthenticated>
-          {/* <section className='nav-item'> */}
-          <p>Hello, guest</p>
-          <section className="sign">
+          <li>
             <a href="/" onClick={handleLogin} className="nav-link">
               Sign in
             </a>
+          </li>
+          <li>
             <a href="/" onClick={handleRegister} className="nav-link">
               Register
             </a>
-          </section>
-          {/* </section> */}
+          </li>
+          <li>Hello, guest</li>
         </IfNotAuthenticated>
-      </section>
+      </ul>
     </nav>
   )
 }

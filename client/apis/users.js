@@ -11,9 +11,3 @@ export function getUsers() {
 export function addUser(user) {
   return request.post(rootUrl + '/users').send(user)
 }
-
-export function getUserRoles(id) {
-  return request.get(`${rootUrl}/users/${id}`).then((res) => {
-    return res.body.roles
-  })
-}

@@ -1,112 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 html,
 body {
-  font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
-.table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+body {
+  background-image: linear-gradient(
+    315deg,
+    hsl(116deg 37% 71%) 0%,
+    hsl(138deg 39% 68%) 11%,
+    hsl(152deg 41% 66%) 22%,
+    hsl(163deg 40% 64%) 33%,
+    hsl(171deg 39% 62%) 44%,
+    hsl(178deg 36% 61%) 56%,
+    hsl(184deg 36% 62%) 67%,
+    hsl(190deg 34% 63%) 78%,
+    hsl(195deg 31% 64%) 89%,
+    hsl(200deg 27% 64%) 100%
+  );
 }
 
-table td,
-table th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-table tr:hover {
-  background-color: #ddd;
-}
-
-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #9c9c9c;
-  color: white;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  align-self: stretch;
-}
-
-.logo {
-  width: 50%;
-}
-
-.sign {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-  text-align: right;
-  justify-content: right;
-  gap: 10px;
-}
+$serv-darkgreen: #59d74f;
+$serv-lightgreen: #d4ffd3;
 
 a {
+  text-decoration: none;
   color: inherit;
 }
 
-.nav-item {
-  width: 50%;
-  text-align: right;
-}
-
-.app {
+#app {
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  align-items: center;
+  height: 100vh;
 }
 
-.registration {
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flex {
   display: flex;
+}
+
+.flex-col {
   flex-direction: column;
-  gap: 10px;
 }
 
-.form {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.title {
-  font-size: larger;
-}
-
-.message {
-  background-color: lightgrey;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.buttons {
-  display: flex;
+.flex-row {
   flex-direction: row;
-  gap: 20px;
 }
 
-.users {
-  display: flex;
-  flex-direction: column;
+.flex-align-center {
   align-items: center;
 }
 
-.ping {
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-space-between {
+  justify-content: space-between;
+}
+
+header {
+  background: $serv-lightgreen;
+  padding: 0 2rem;
+}
+
+header a > .logo {
+  margin: 0;
+  line-height: 0;
+}
+
+header a > .logo > img {
+  width: 80px;
+  height: 80px;
+  margin: 1rem 0;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  background: $serv-lightgreen;
+  padding: 0 2rem;
+}
+
+nav > ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+nav a {
+  color: rgb(0, 44, 20);
 }
