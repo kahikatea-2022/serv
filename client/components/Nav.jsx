@@ -36,6 +36,16 @@ function Nav() {
           <li>
             <Link to="/customer">My Listings</Link>
           </li>
+
+          {/* <li>
+            <Link to="/business">Account</Link>
+          </li>
+          <li>
+            <Link to="/business">Listings</Link>
+          </li>
+          <li>
+            <Link to="/business">Jobs</Link>
+          </li> */}
           <li>
             <a href="/" onClick={handleLogoff} className="nav-link">
               Log out
