@@ -29,47 +29,21 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/customer/add" element={<CustomerJobAdd />} />
-<<<<<<< HEAD
-        <Route path="/customer/completed/:jobsId" element={<CustomerJobCompleted />} />
         <Route path="/customer" element={<JobsList><WaitIndicator /></JobsList>}>
           <Route path="message" element={<SubmittedMessage />} />
         </Route>
         <Route path="/customer/quote/:jobsId" element={<QuotesList><WaitIndicator /></QuotesList>} />
 
         <Route path="/business/open/:jobId" element={<BusinessJobToQuote><WaitIndicator /></BusinessJobToQuote>} />
-        <Route path="/business/active/:jobId" element={<BusinessActiveJob><WaitIndicator /></BusinessActiveJob>} />
-||||||| 05cbec3
-        <Route path="/customer/completed/:jobsId" element={<CustomerJobCompleted />} />
-        <Route path="/customer" element={ <JobsList><WaitIndicator /></JobsList>}>
-          <Route path="message" element={<SubmittedMessage />} />
-        </Route>
-        <Route path="/customer/quote/:jobsId" element={ <QuotesList><WaitIndicator /></QuotesList> }/>
-        
-        {/* <Route path="/business/:jobId" element={} /> */}
-=======
+
         <Route
           path="/customer/completed/:jobsId"
           element={<CustomerJobCompleted />}
         />
-        <Route
-          path="/customer"
-          element={
-            <JobsList>
-              <WaitIndicator />
-            </JobsList>
-          }
-        />
-        <Route
-          path="/customer/quote/:jobsId"
-          element={
-            <QuotesList>
-              <WaitIndicator />
-            </QuotesList>
-          }
-        />
-
+   
+   
         {/* <Route path="/business/:jobId" element={} /> */}
->>>>>>> 28948660d3de110f576418df8eefad7285052596
+
         {/* <Route path="/business/jobs" element={} /> */}
         {/* <Route path="/business/jobs/:jobId" element={} />  */}
 
