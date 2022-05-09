@@ -1,5 +1,6 @@
 import { SHOW_ERROR, HIDE_ERROR } from '../actions/error'
 import errorReducer from './error'
+// Woo, tests!
 
 describe('error reducer', () => {
   it('returns error message on "SHOW_ERROR"', () => {

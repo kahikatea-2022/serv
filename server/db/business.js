@@ -9,6 +9,7 @@ function addBusiness(input, db = connection) {
     category,
     logo,
     average_rating: null,
+    // Probably don't need to set this at all, since the db defaults it to null already.
   }
   return db('businesses').insert(business)
 }

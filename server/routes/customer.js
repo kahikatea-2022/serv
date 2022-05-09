@@ -7,6 +7,7 @@ const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../', '.env') })
 const Stripe = require('stripe')
 const stripe = Stripe(process.env.STRIPE_PRIVATE_KEY)
+// Wow, cool, this is a big thing to tackle for this project!
 
 // POST api/v1/customer/add
 router.post('/add', async (req, res) => {
