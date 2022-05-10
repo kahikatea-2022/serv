@@ -1,3 +1,5 @@
+// Imports would ideally be organised by external then internal and alphabetically
+// in each set.
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { cacheUser } from '../auth0-utils'
@@ -20,6 +22,10 @@ import WaitIndicator from './WaitIndicator'
 import BusinessQuotedJob from './business/BusinessQuotedJob'
 import CheckoutSuccess from './customer/StripeCheckout/CheckoutSuccess'
 import CheckoutCancel from './customer/StripeCheckout/CheckoutCancel'
+
+// At the current level of completion, we're thinking it might not be profitable
+// to review the front-end in any level of detail. Please get in touch if you
+// have particular areas you'd like us to look at.
 
 function App() {
   cacheUser(useAuth0)

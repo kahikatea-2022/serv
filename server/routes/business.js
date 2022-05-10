@@ -4,6 +4,12 @@ const dbQuotes = require('../db/quotes')
 const dbBusiness = require('../db/business')
 const router = express.Router()
 
+// If you wanted to have another go at this post-graduation, we think it would 
+// be good to rearchitect all the routes, ignoring the two user types. What matters
+// from the perspective of the routes would be a single job, a single quote,
+// a list of jobs, or a list of quotes. What each type of user will be authorised
+// to view will vary, but the routes shouldn't be organised with that in mind.
+
 // GET /business
 router.get('/', async (req, res) => {
   try {
