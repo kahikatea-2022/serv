@@ -23,36 +23,49 @@ You can find the server running on [http://localhost:3000](http://localhost:3000
 
 # Routes
 
-## General Routes
+## Routes Before Signing in
 
-**`GET /` Home Page**
-React route.
+### **Home Page** (`/`) 
 
-**`GET /about` How it works Page** 
-React route.
+_React route._
 
-**`GET /services` Services Page**
-React route.
+### **'How it works' page** (`/about`)
 
-**`Auth0 form`**
-Link - not a route.
-Redirects to `/login` or `/register`.
+_React route._
 
-**`/login`**
-React route.
+### **Services Page** (`/services`)
 
-**`/register`**
-React route.
-User chooses 'business' or 'customer' userType.
+_React route._
+
+### **Auth0 form**
+
+_Link - not a route._
+
+### **Log in (`/login`)**
+
+_React route._
+
+### **Register (`/register`)**
+
+_React route._
+
+User chooses 'business' or 'customer' type.
+
 Conditionally renders either:
-- (For customer): Just a 'register' button. POSTs to `/customer`
-- (For businesses): Business info form and register button. POSTs to `/business`
+- (For customer): Just a 'register' button.
+- (For businesses): Business info form and register button.
+
+**BOTH** customer and business users send their data to the /user POST route.
 
 ## Customer Routes
 
-**`POST /users` Send data from /register**
+### **Send data from /register (`POST /users`)**
+Both business and customer data comes here. Data are added to the users table in DB, and conditionally added to the 'businesses' table if applicable. 
 
-**`GET /customer/jobs/add` View form to submit a new job**
+### **Form to submit a new job (`/customer/jobs/add`)**
+
+_React route._
+
 POSTs to `/customer/jobs` (i.e. redirects to customer dashboard).
 
 **`GET /customer/jobs` View client dashboard with their existing jobs and button to add new**
@@ -102,15 +115,15 @@ Retrieve data from props to specificy job's `id` in form.
 
 ```json
 [
-        {
-          id: 1,
-          user_id: 1,
-          job_id: 
-          price: 500,
-          date_added: '2022-05-04T21:15:34.334Z',
-          notes: 'We can do it for 500 if its quick',
-          business_id: null
-        }
+  {
+    id: 1,
+    user_id: 1,
+    job_id: 
+    price: 500,
+    date_added: '2022-05-04T21:15:34.334Z',
+    notes: 'We can do it for 500 if its quick',
+    business_id: null
+  }
 ]
 ```
 
@@ -123,7 +136,7 @@ Retrieve data from props to specificy job's `id` in form.
   {
     "id": 1,
     "name": "Pumbers Inc",
-    "website": "plimbing.com",
+    "website": "plumbing.com",
     "category": "Plumbing",
     "logo": "Plumbing",
     "averageRating": "2",
@@ -144,6 +157,14 @@ This repo includes:
   * Registration is used to save the users' info after they are registered with Auth0
 * an example database module (`server/db/users.js`)
 * an API client module (`client/apis/users.js`)
+
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 
 ## Auth0

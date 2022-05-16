@@ -1,7 +1,10 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { cacheUser } from '../auth0-utils'
+import Nav from './Nav'
+import PingRoutes from './PingRoutes'
 import Registration from './Registration'
+import Users from './Users'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './Layout/Layout'
 import WelcomeToServ from './home/WelcomeToServ'
@@ -25,7 +28,7 @@ import CheckoutCancel from './customer/StripeCheckout/CheckoutCancel'
 function App() {
   cacheUser(useAuth0)
   return (
-    <Layout>
+    <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<WelcomeToServ />} />
@@ -110,7 +113,7 @@ function App() {
         <Route path="/business/jobs" element={} />
         <Route path="/business/jobs/:jobId" element={} /> */}
       </Routes>
-    </Layout>
+    </div>
   )
 }
 

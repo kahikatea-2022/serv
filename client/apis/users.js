@@ -16,3 +16,9 @@ export function APIgetUserByAuth0Id(auth0Id) {
     return res.body
   })
 }
+
+export function getUserRoles(id) {
+  return request.get(`${rootUrl}/users/${id}`).then((res) => {
+    return res.body.roles
+  })
+}

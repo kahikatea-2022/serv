@@ -9,12 +9,12 @@ function Registration() {
   const user = useSelector((state) => state.user)
   const currentUser = useSelector((state) => state.currentUser)
   const navigate = useNavigate()
-  const [userType, setUserType] = useState('')
 
   const [form, setForm] = useState({
     auth0Id: '',
     userName: '',
     email: '',
+    description: '',
   })
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function Registration() {
       auth0Id: user.auth0Id,
       userName: user.name,
       email: user.email,
+      description: user.description,
     })
   }, [user])
 
